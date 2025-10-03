@@ -1,0 +1,67 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build output
+dist/
+.next/
+out/
+build/
+.cache/
+coverage/
+
+# Prisma
+prisma/dev.db
+prisma/dev.db-journal
+prisma/migrations/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs
+*.log
+*.log.*
+*.out
+*.err
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.swo
+*.bak
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-data/
+.docker/
+*.pid
+
+# Redis / Postgres local volumes (if persisted)
+data/
+pgdata/
+
+# Next.js specific
+.vercel/
+.next/cache/
+
+# Testing
+coverage/
+jest-coverage/

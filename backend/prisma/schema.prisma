@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  messages  Message[]
+  contacts  Contact[]
+}
+
+model Contact {
+  id        String   @id @default(cuid())
+  ownerId   String
+  owner     User     @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  name      String
+  phone     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  messages  Message[]
+  @@index([ownerId])
+}
+
+model Message {
+  id         String         @id @default(cuid())
+  senderId   String
+  sender     User           @relation(fields: [senderId], references: [id], onDelete: Cascade)
+  contactId  String
+  contact    Contact        @relation(fields: [contactId], references: [id], onDelete: Cascade)
+  content    String
+  status     MessageStatus  @default(PENDING)
+  createdAt  DateTime       @default(now())
+  sentAt     DateTime?
+  error      String?
+  @@index([senderId])
+  @@index([contactId])
+  @@index([status])
+}
+
+enum MessageStatus {
+  PENDING
+  PROCESSING
+  SENT
+  FAILED
+}
+
