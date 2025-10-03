@@ -3,7 +3,8 @@
 DeliverIQ is a **full-stack bulk messaging system** that enables users to manage contacts, compose messages, and send them in bulk while ensuring delivery tracking. The system is designed for scalability, fault-tolerance, and performance using **Next.js, NestJS, PostgreSQL, Redis, and Prisma ORM**.
 
 
-![Uploading ff88328b-e075-4038-b8f5-25b811e58112.png…]()
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/b0c4933c-c4d2-4e95-b220-bd5d39b4b026" />
+
 
 ---
 
